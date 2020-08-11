@@ -1,0 +1,61 @@
+<html>
+	<style>
+	.flex-row {								/*class which defines a flex container*/
+		display: flex;
+	}
+	.flex-column {
+		display: flex;
+		flex-direction: column;				/* establishes the main-axis: top to bottom*/
+	}
+	.space-between {						/*items are evenly distributed in the line;*/ 
+		justify-content: space-between;		/*first item is on the start line, last item on the end line*/
+	}
+	.justify-center {
+		justify-content: center;			/* items are centered along the line*/
+	}
+	.text-area {
+		width: 400px;
+		padding: 10px;
+		margin: 10px 0;
+		min-height: 300px;
+		border: 1px solid darkgrey;
+	}
+	.button {
+		width: 100px;
+	}
+	.bold {
+		font-weight: bold;
+	}
+	.central {								/*class which defines paddings*/
+		padding: 10px;
+	}
+	</style>
+	<head>
+		<title>Test</title>
+	</head>
+	<body>
+		<div class="flex-row"> 			<!-- defines a flex container. Next 3 divs we represent in container-->
+			<div class="flex-column">	<!--establishes the main-axis: top to bottom-->
+				<button class="button" onclick="clearInput()">Clear</button>
+				<textarea id="input" class="text-area"></textarea>
+			</div>
+			<div class="flex-column central justify-center"> <!--establishes the main-axis: top to bottom + padding + items are centered along the line-->
+				<button class="button" onclick="convert()">Convert</button>
+			</div>
+			<div class="flex-column">	<!--establishes the main-axis: top to bottom-->
+				<div class="flex-row space-between">  <!-- establishes the main-axis: left to right + items are evenly distributed-->
+					<button class="button" onclick="clearOutput()">Clear</button>
+					<select id="select" onchange="onColorChange()"> <!--drop-down list-->
+						<option value="black">Choose color</option>
+						<option value="black" class="bold">Black</option>
+						<option value="blue" class="bold" style="color: blue;">Blue</option>
+						<option value="red" class="bold" style="color: red;">Red</option>
+					</select>
+				</div>
+				<div id="output" class="text-area"></div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+
+	</body>
+</html>
